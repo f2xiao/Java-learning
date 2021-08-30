@@ -1,10 +1,10 @@
 package algorithm.sort;
-
+// Time Complexity: O(f(n))= O(n^2)
 public class Selection {
     //1.method sort: sort elements in array a
     public static void sort(Comparable[] a) {
         for (int i = 0; i < a.length-2; i++) {
-            // assume the index of the min value is at the beginning of the unsorted part
+            // assume the index of the min value is at the beginning of each loop
             int minsIndex = i;
             for (int j = i+1; j < a.length ; j++) {
                 // if the assumed min > a[j], update the minsIndex
@@ -27,8 +27,5 @@ public class Selection {
         Comparable t = a[i];
         a[i] = a[j];
         a[j] = t;
-
     }
-
-
 }

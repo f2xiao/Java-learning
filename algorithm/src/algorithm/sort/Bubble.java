@@ -1,5 +1,5 @@
 package algorithm.sort;
-
+// Time Complexity: O(f(n))= O(n^2)
 public class Bubble {
     public static void sort(Comparable[] a) {
         for (int i = a.length-1; i >0; i--) {

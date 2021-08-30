@@ -4,6 +4,7 @@ import algorithm.sort.Insertion;
 import algorithm.sort.Shell;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -13,10 +14,10 @@ public class SortCompare {
         //1. create an ArrayList, to store the integers
         ArrayList<Integer> list = new ArrayList<>();
         //2. create cache data stream BufferedReader, to read the file and store them in the ArrayList
-        BufferedReader reader = new BufferedReader(new InputStreamReader(SortCompare.class.getClassLoader().getResourceAsStream("reverse_arr.txt")));
-        String line = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("reverse_arr.txt")));
+        String line;
         while((line=reader.readLine())!=null){
-            //line is String, converts it to Integer and store in the ArrayList
+            //line is String, converts every line to Integer and store in the ArrayList
             int i = Integer.parseInt(line);
             list.add(i);
         }
@@ -26,7 +27,7 @@ public class SortCompare {
         list.toArray(a);
 
         //4. use test methods for testing
-        //testInsertion(a);
+        testInsertion(a);
         testShell(a);
 
     }
@@ -39,7 +40,7 @@ public class SortCompare {
         Shell.sort(a);
         //3.get the time after the test
         long end = System.currentTimeMillis();
-        System.out.println("Shell sort used"+(end-start)+"ms");
+        System.out.println("Using Shell sort took:"+(end-start)+"ms");
     }
 
     //test insertion sort
@@ -50,6 +51,6 @@ public class SortCompare {
         Insertion.sort(a);
         long end = System.currentTimeMillis();
         //3.get the time after the test
-        System.out.println("Insertion sort used"+(end-start)+"ms");
+        System.out.println("Using Insertion sort took:"+(end-start)+"ms");
     }
 }

@@ -1,6 +1,7 @@
 package algorithm.test;
 
 import algorithm.sort.Insertion;
+import algorithm.sort.Merge;
 import algorithm.sort.Shell;
 
 import java.io.BufferedReader;
@@ -29,6 +30,8 @@ public class SortCompare {
         //4. use test methods for testing
         testInsertion(a);
         testShell(a);
+        testMerge(a);
+    
 
     }
     //using post-mortem analysis to study the time complexity
@@ -51,6 +54,18 @@ public class SortCompare {
         Insertion.sort(a);
         long end = System.currentTimeMillis();
         //3.get the time after the test
-        System.out.println("Using Insertion sort took:"+(end-start)+"ms");
+        System.out.println("Using Insertion sort took:" + (end - start) + "ms");
     }
+    //test merge sort
+    public static void testMerge(Integer[] a) {
+        //1.get the time before the test
+        long start = System.currentTimeMillis();
+        //2. insertion sort
+        Merge.sort(a);
+        long end = System.currentTimeMillis();
+        //3.get the time after the test
+        System.out.println("Using Merge sort took:" + (end - start) + "ms");
+    }
+    
+    
 }

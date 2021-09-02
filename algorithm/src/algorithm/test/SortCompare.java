@@ -2,6 +2,7 @@ package algorithm.test;
 
 import algorithm.sort.Insertion;
 import algorithm.sort.Merge;
+import algorithm.sort.Quick;
 import algorithm.sort.Shell;
 
 import java.io.BufferedReader;
@@ -28,9 +29,10 @@ public class SortCompare {
         list.toArray(a);
 
         //4. use test methods for testing
-        testInsertion(a);
-        testShell(a);
-        testMerge(a);
+        testInsertion(a); //17271ms
+        testShell(a); //12ms
+        testMerge(a); //54ms
+        // testQuick(a); // stack overflow
     
 
     }
@@ -56,15 +58,27 @@ public class SortCompare {
         //3.get the time after the test
         System.out.println("Using Insertion sort took:" + (end - start) + "ms");
     }
+
     //test merge sort
     public static void testMerge(Integer[] a) {
         //1.get the time before the test
         long start = System.currentTimeMillis();
-        //2. insertion sort
+        //2. merge sort
         Merge.sort(a);
         long end = System.currentTimeMillis();
         //3.get the time after the test
         System.out.println("Using Merge sort took:" + (end - start) + "ms");
+    }
+    
+    //test quick sort
+    public static void testQuick(Integer[] a) {
+        //1.get the time before the test
+        long start = System.currentTimeMillis();
+        //2. quick sort
+        Quick.sort(a);
+        long end = System.currentTimeMillis();
+        //3.get the time after the test
+        System.out.println("Using Quick sort took:" + (end - start) + "ms");
     }
     
     

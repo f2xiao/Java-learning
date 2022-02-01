@@ -13,10 +13,10 @@ Null: null;
 */
 public class ConstantDemo {
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("Constant");
+        final int myNum = 15;
+        System.out.println(myNum);
+
     }
 
 }

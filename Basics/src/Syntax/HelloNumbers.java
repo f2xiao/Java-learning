@@ -41,6 +41,16 @@ public class HelloNumbers {
             System.out.print("\n");
         }
     }
+ public static void printStarsReversed(int n){
+        for (int i = 1; i <= n; i++) {
+            int j=n;
+           while(j>i){
+               System.out.print("*");
+               j--;
+           }
+            System.out.print("\n");
+        }
+    }
 
     public static void main(String[] args) {
 //         sum(10);
@@ -48,5 +58,6 @@ public class HelloNumbers {
 //        System.out.println(isPrime);
 //        printPrime(10);
         printStars(5);
+        printStarsReversed(5);
     }
 }

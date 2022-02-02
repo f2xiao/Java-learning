@@ -2,6 +2,12 @@ package Syntax;
 
 public class Hello {
     public static void main(String[] args) {
-        System.out.println("I am the best");
+        int x = 5;
+        x = x + 1;
+        System.out.println(x);
+        int y = x;
+        x = x + 1;
+        System.out.println("x is: " + x);
+        System.out.println("y is: " + y);
     }
 }

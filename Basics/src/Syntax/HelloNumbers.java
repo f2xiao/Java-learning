@@ -52,12 +52,34 @@ public class HelloNumbers {
         }
     }
 
+    public static void printArray(int[] numbers){
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+    }
+
+    public static int max(int[] m){
+        int max = 0;
+        for (int i = 0; i < m.length; i++) {
+            if(m[i]>max){
+                max = m[i];
+            }
+        }
+        return max;
+    }
+
+
     public static void main(String[] args) {
 //         sum(10);
 //         boolean isPrime = isPrime(10);
 //        System.out.println(isPrime);
 //        printPrime(10);
-        printStars(5);
-        printStarsReversed(5);
+//        printStars(5);
+//        printStarsReversed(5);
+//        printStars(10);
+//        printArray(new int[]{4, 7, 10});
+//        printArray(new int[3]);
+        int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
+        System.out.println(max(numbers));
     }
 }

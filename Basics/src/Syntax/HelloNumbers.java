@@ -31,10 +31,22 @@ public class HelloNumbers {
         }
     }
 
+    public static void printStars(int n){
+        for (int i = 1; i <= n; i++) {
+            int j=1;
+           while(j<=i){
+               System.out.print("*");
+               j++;
+           }
+            System.out.print("\n");
+        }
+    }
+
     public static void main(String[] args) {
 //         sum(10);
 //         boolean isPrime = isPrime(10);
 //        System.out.println(isPrime);
-        printPrime(10);
+//        printPrime(10);
+        printStars(5);
     }
 }

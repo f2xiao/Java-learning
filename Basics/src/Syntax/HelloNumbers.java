@@ -57,27 +57,27 @@ public class HelloNumbers {
     }
 /** Print elements in an array in one line */
     public static void printArray(int[] numbers){
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.print(numbers[i]);
+        for (int number : numbers) {
+            System.out.print(number);
         }
     }
 /** Return the max number in an array*/
     public static int max(int[] m){
         int max = 0;
-        for (int i = 0; i < m.length; i++) {
-            if(m[i]>max){
-                max = m[i];
+        for (int j : m) {
+            if (j > max) {
+                max = j;
             }
         }
         return max;
     }
     public static void printStr(String[] a){
-        for (int i = 0; i < a.length; i += 1) {
-            if (a[i].contains("horse")) {
+        for (String s : a) {
+            if (s.contains("horse")) {
                 continue;
             }
             for (int j = 0; j < 3; j += 1) {
-                System.out.println(a[i]);
+                System.out.println(s);
             }
         }
     }
@@ -111,7 +111,7 @@ public class HelloNumbers {
 //        printArray(new int[3]);
 //        int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
 //        System.out.println(max(numbers));
-//        printStr(new String[]{"cat", "dog", "laser horse", "ketchup", "horse", "horbse"});
+        printStr(new String[]{"cat", "dog", "laser horse", "ketchup", "horse", "horbse"});
         int[] a = {1, 2, -3, 4, 5, 4};
         int n = 3;
         windowPosSum(a, n);

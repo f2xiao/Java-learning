@@ -71,6 +71,32 @@ public class HelloNumbers {
         }
         return max;
     }
+    public static void printStr(String[] a){
+        for (int i = 0; i < a.length; i += 1) {
+            if (a[i].contains("horse")) {
+                continue;
+            }
+            for (int j = 0; j < 3; j += 1) {
+                System.out.println(a[i]);
+            }
+        }
+    }
+
+    public static void windowPosSum(int[] a, int n) {
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]<0){
+                continue;
+            }
+            int sum =0;
+            for (int j = 0; j <= n; j++) {
+                if(i+j>=a.length){
+                    break;
+                }
+                sum += a[i+j];
+            }
+            a[i] = sum;
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -83,7 +109,14 @@ public class HelloNumbers {
 //        printStars(10);
 //        printArray(new int[]{4, 7, 10});
 //        printArray(new int[3]);
-        int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
-        System.out.println(max(numbers));
+//        int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
+//        System.out.println(max(numbers));
+//        printStr(new String[]{"cat", "dog", "laser horse", "ketchup", "horse", "horbse"});
+        int[] a = {1, 2, -3, 4, 5, 4};
+        int n = 3;
+        windowPosSum(a, n);
+
+        // Should print 4, 8, -3, 13, 9, 4
+        System.out.println(java.util.Arrays.toString(a));
     }
 }

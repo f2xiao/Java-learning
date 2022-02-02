@@ -23,9 +23,18 @@ public class HelloNumbers {
         return true;
     }
 
+    public static void printPrime(int n){
+        for (int i = 2; i <= n; i++) {
+            if(isPrime(i)){
+                System.out.println(i+" ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
 //         sum(10);
-         boolean isPrime = isPrime(10);
-        System.out.println(isPrime);
+//         boolean isPrime = isPrime(10);
+//        System.out.println(isPrime);
+        printPrime(10);
     }
 }

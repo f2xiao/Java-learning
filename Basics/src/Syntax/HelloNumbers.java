@@ -35,10 +35,11 @@ public class HelloNumbers {
 
     /** Print * in a triangle shape*/
     public static void printStars(int n){
+        String str = "*";
         for (int i = 1; i <= n; i++) {
             int j=1;
            while(j<=i){
-               System.out.print("*");
+               System.out.print(str);
                j++;
            }
             System.out.print("\n");
@@ -46,10 +47,11 @@ public class HelloNumbers {
     }
     /** Print * in a reversed triangle shape*/
  public static void printStarsReversed(int n){
+     String str = "*";
         for (int i = 1; i <= n; i++) {
             int j=n;
            while(j>i){
-               System.out.print("*");
+               System.out.print(str);
                j--;
            }
             System.out.print("\n");
@@ -104,19 +106,19 @@ public class HelloNumbers {
 //         boolean isPrime = isPrime(10);
 //        System.out.println(isPrime);
 //        printPrime(10);
-//        printStars(5);
-//        printStarsReversed(5);
+        printStars(5);
+        printStarsReversed(5);
 //        printStars(10);
 //        printArray(new int[]{4, 7, 10});
 //        printArray(new int[3]);
 //        int[] numbers = new int[]{9, 2, 15, 2, 22, 10, 6};
 //        System.out.println(max(numbers));
-        printStr(new String[]{"cat", "dog", "laser horse", "ketchup", "horse", "horbse"});
-        int[] a = {1, 2, -3, 4, 5, 4};
-        int n = 3;
-        windowPosSum(a, n);
+//        printStr(new String[]{"cat", "dog", "laser horse", "ketchup", "horse", "horbse"});
+//        int[] a = {1, 2, -3, 4, 5, 4};
+//        int n = 3;
+//        windowPosSum(a, n);
 
         // Should print 4, 8, -3, 13, 9, 4
-        System.out.println(java.util.Arrays.toString(a));
+//        System.out.println(java.util.Arrays.toString(a));
     }
 }

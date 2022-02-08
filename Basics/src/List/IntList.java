@@ -9,4 +9,12 @@ public class IntList {
         rest = r;
     }
 
+    /** Return size of this IntList, using recursion*/
+    public int size(){
+        if(rest == null){
+            return 1;
+        }
+        return 1+ this.rest.size();
+    }
+
 }

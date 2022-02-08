@@ -30,10 +30,10 @@ public class IntList {
 
     /** Returns the ith item of the list, using recursion*/
     public int get(int i){
-        i--;
         if(i==0){
             return this.first;
         }
+        i--;
         return this.rest.get(i);
     }
 
@@ -41,7 +41,7 @@ public class IntList {
          IntList L = new IntList(15, null);
          L = new IntList(10, L);
          L = new IntList(5, L);
-        System.out.println(L.get(1));
+        System.out.println(L.get(2));
 
     }
 

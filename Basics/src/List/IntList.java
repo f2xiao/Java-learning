@@ -51,19 +51,36 @@ public class IntList {
 
     }
 
+    /** Returns an IntList identical to L, but with all values incremented by x. */
+    public static IntList dincrList(IntList L, int x){
+        IntList Q = L;
+        while(L.rest != null){
+            L.first += x;
+            L = L.rest;
+        }
+        L.first += x;
+
+        return Q;
+    }
+
     public static void main(String[] args) {
          IntList L = new IntList(15, null);
          L = new IntList(10, L);
          L = new IntList(5, L);
-        System.out.println(L.get(0));
-        System.out.println(L.get(1));
-        System.out.println(L.get(2));
-        System.out.println(L.size());
+//        System.out.println(L.get(0));
+//        System.out.println(L.get(1));
+//        System.out.println(L.get(2));
+//        System.out.println(L.size());
 
-        IntList Q = incrList(L, 1);
-        System.out.println(Q.get(0));
-        System.out.println(Q.get(1));
-        System.out.println(Q.get(2));
+//        IntList Q = incrList(L, 1);
+//        System.out.println(Q.get(0));
+//        System.out.println(Q.get(1));
+//        System.out.println(Q.get(2));
+
+        IntList q = dincrList(L, 1);
+        System.out.println(q.get(0));
+        System.out.println(q.get(1));
+        System.out.println(q.get(2));
     }
 
 

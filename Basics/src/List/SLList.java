@@ -21,23 +21,32 @@ public class SLList {
 
     public void addLast(int x){
         IntNode p = first;
-        IntNode l = null;
-        while(p!=null){
-            l= p;
+        while(p.next !=null){
             p = p.next;
         }
-        l.next = new IntNode(x,null);
+        p.next = new IntNode(x,null);
     }
 
     public int getFirst(){
         return first.item;
     }
 
+    public int size(){
+        int totalSize =1;
+        IntNode p = first;
+        while(p.next !=null){
+            totalSize ++;
+            p=p.next;
+        }
+        return totalSize;
+    }
+
     public static void main(String[] args) {
         SLList L = new SLList(15);
-        L.addFirst(10);
-        L.addFirst(5);
+//        L.addFirst(10);
+//        L.addFirst(5);
         L.addLast(20);
+        System.out.println(L.size());
     }
 
 }

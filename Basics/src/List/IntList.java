@@ -37,12 +37,35 @@ public class IntList {
         return this.rest.get(i);
     }
 
+    /** Returns an IntList identical to L, but with all values incremented by x, using iterations  */
+
+    public static IntList incrList(IntList L,int x){
+        int size = L.size();
+        IntList Q = new IntList(L.get(size-1)+x, null);
+
+        for (int i = size-1; i >0 ; i--) {
+            Q = new IntList(L.get(i-1)+x, Q);
+        }
+
+        return Q;
+
+    }
+
     public static void main(String[] args) {
          IntList L = new IntList(15, null);
          L = new IntList(10, L);
          L = new IntList(5, L);
+        System.out.println(L.get(0));
+        System.out.println(L.get(1));
         System.out.println(L.get(2));
+        System.out.println(L.size());
 
+        IntList Q = incrList(L, 1);
+        System.out.println(Q.get(0));
+        System.out.println(Q.get(1));
+        System.out.println(Q.get(2));
     }
+
+
 
 }

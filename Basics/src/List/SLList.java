@@ -12,6 +12,12 @@ public class SLList {
 
     private IntNode first;
     private int size;
+/** Create an empty list*/
+    public SLList(){
+        first=null;
+        size=0;
+    }
+
     public SLList(int x){
         first = new IntNode(x, null);
         size =1;

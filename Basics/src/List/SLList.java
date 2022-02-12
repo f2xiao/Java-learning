@@ -10,13 +10,16 @@ public class SLList {
         }
     }
 
-    public IntNode first;
+    private IntNode first;
+    private int size;
     public SLList(int x){
         first = new IntNode(x, null);
+        size =1;
     }
 
     public void addFirst(int x){
         first = new IntNode(x, first);
+        size++;
     }
 
     public void addLast(int x){
@@ -25,6 +28,7 @@ public class SLList {
             p = p.next;
         }
         p.next = new IntNode(x,null);
+        size++;
     }
 
     public int getFirst(){
@@ -54,13 +58,15 @@ private static int size(IntNode p){
 public int size (){
     return size(first);
 }
-
+public int fastSize(){
+    return size;
+}
     public static void main(String[] args) {
         SLList L = new SLList(15);
         L.addFirst(10);
-//        L.addFirst(5);
-//        L.addLast(20);
-        int s = L.size();
+        L.addFirst(5);
+        L.addLast(20);
+        int s = L.fastSize();
         System.out.println(s);
     }
 

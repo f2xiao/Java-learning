@@ -76,14 +76,23 @@ public class SLList {
     public int fastSize(){
         return size;
     }
+
+    /** Delete the first element in the list*/
+    public void deleteFirst(){
+       if(sentinel.next == null) return;
+        sentinel.next = sentinel.next.next;
+        size--;
+    }
+
     public static void main(String[] args) {
-        SLList L = new SLList();
-        L.addFirst(10);
-        L.addFirst(5);
-        L.addLast(20);
+        SLList L = new SLList(10);
+//        L.addFirst(10);
+//        L.addFirst(5);
+//        L.addLast(20);
+        L.deleteFirst();
         int s = L.fastSize();
-        int first = L.getFirst();
-        System.out.println(first);
+//        int first = L.getFirst();
+//        System.out.println(first);
         System.out.println(s);
     }
 

@@ -88,17 +88,35 @@ public class IntList {
         }
     }
 
+    /** Square the IntList everytime x is added to the end of the list*/
+    public void squareList(int x){
+        IntList p =this;
+        while(p.rest != null){
+            IntList p2 = p.rest;
+            p.rest = new IntList(p.first * p.first, p2);
+            p = p2;
+        }
+        p.rest = new IntList(p.first * p.first, p.rest);
+        p.rest.rest = new IntList(x, null);
+    }
+
     public static void main(String[] args) {
-         IntList L = new IntList(3, null);
-         L = L.addFirst(1);
+         IntList L = new IntList(2, null);
+//         L = L.addFirst(2);
          L= L.addFirst(1);
-         L= L.addFirst(1);
-         L.addAdjacent();
+//         L= L.addFirst(1);
+//         L.addAdjacent();
 //         L = new IntList(10, L);
 //         L = new IntList(5, L);
-        System.out.println(L.size());
-        System.out.println(L.get(0));
-        System.out.println(L.get(1));
+        L.squareList(5);
+        for (int i = 0; i < L.size(); i++) {
+            System.out.println(L.get(i));
+        }
+        System.out.println("Add 7 to the end");
+        L.squareList(7);
+        for (int i = 0; i < L.size(); i++) {
+            System.out.println(L.get(i));
+        }
 
 
 

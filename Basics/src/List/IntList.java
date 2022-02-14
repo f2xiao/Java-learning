@@ -9,6 +9,12 @@ public class IntList {
         rest = r;
     }
 
+
+//    public void addIntList(int data){
+//        IntList newIntList = new IntList(data, null);
+//        this.rest = newIntList;
+//    }
+
     /** Return size of this IntList, using recursion*/
     public int size(){
         if(rest == null){
@@ -51,6 +57,7 @@ public class IntList {
 
     }
 
+
     /** Returns an IntList identical to L, but with all values incremented by x. */
     public static IntList dincrList(IntList L, int x){
         IntList Q = L;
@@ -63,26 +70,32 @@ public class IntList {
         return Q;
     }
 
+    /** Add x as the first item in the list*/
+    public IntList addFirst(int x){
+        return new IntList(x, this);
+    }
+
     public static void main(String[] args) {
          IntList L = new IntList(15, null);
-         L = new IntList(10, L);
-         L = new IntList(5, L);
-//        System.out.println(L.get(0));
-//        System.out.println(L.get(1));
-//        System.out.println(L.get(2));
-//        System.out.println(L.size());
+         L = L.addFirst(10);
+         L= L.addFirst(5);
+//         L = new IntList(10, L);
+//         L = new IntList(5, L);
+        System.out.println(L.get(0));
+        System.out.println(L.get(1));
+        System.out.println(L.get(2));
+        System.out.println(L.size());
+
 
 //        IntList Q = incrList(L, 1);
 //        System.out.println(Q.get(0));
 //        System.out.println(Q.get(1));
 //        System.out.println(Q.get(2));
 
-        IntList q = dincrList(L, 1);
-        System.out.println(q.get(0));
-        System.out.println(q.get(1));
-        System.out.println(q.get(2));
+//        IntList q = dincrList(L, 1);
+//        System.out.println(q.get(0));
+//        System.out.println(q.get(1));
+//        System.out.println(q.get(2));
     }
-
-
 
 }

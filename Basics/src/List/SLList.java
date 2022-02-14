@@ -1,7 +1,7 @@
 package List;
 
 public class SLList {
-    private class IntNode{
+    private static class IntNode{
         public int item;
         public IntNode next;
         public IntNode(int i, IntNode n){
@@ -10,35 +10,39 @@ public class SLList {
         }
     }
 
-    private IntNode first;
+    private IntNode sentinel;
     private int size;
-/** Create an empty list*/
+
+    /** Create an empty list*/
     public SLList(){
-        first=null;
+        sentinel=new IntNode(22,null);
         size=0;
     }
-
+    /** Create a SLList with x as the first item*/
     public SLList(int x){
-        first = new IntNode(x, null);
+        sentinel=new IntNode(22,null);
+        sentinel.next = new IntNode(x, null);
         size =1;
     }
 
+    /** Add x as the first item in the list*/
     public void addFirst(int x){
-        first = new IntNode(x, first);
+        sentinel.next = new IntNode(x, sentinel.next);
         size++;
     }
-
+    /** Add x as the last item in the list*/
     public void addLast(int x){
-        IntNode p = first;
+        IntNode p = sentinel;
         while(p.next !=null){
             p = p.next;
         }
         p.next = new IntNode(x,null);
+
         size++;
     }
-
+    /** Returns the first item in the list*/
     public int getFirst(){
-        return first.item;
+        return sentinel.next.item;
     }
 
 
@@ -62,17 +66,19 @@ private static int size(IntNode p){
 }
 
 public int size (){
-    return size(first);
+    return size(sentinel.next);
 }
 public int fastSize(){
     return size;
 }
     public static void main(String[] args) {
-        SLList L = new SLList(15);
-        L.addFirst(10);
-        L.addFirst(5);
+        SLList L = new SLList();
+//        L.addFirst(10);
+//        L.addFirst(5);
         L.addLast(20);
         int s = L.fastSize();
+        int first = L.getFirst();
+        System.out.println(first);
         System.out.println(s);
     }
 

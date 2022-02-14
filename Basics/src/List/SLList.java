@@ -26,6 +26,14 @@ public class SLList {
         size =1;
     }
 
+    /** Create a SLList with an int[] array*/
+    public SLList(int[] arr){
+        sentinel=new IntNode(22,null);
+        for (int i = arr.length-1; i >= 0; i--) {
+            addFirst(arr[i]);
+        }
+    }
+
     /** Add x as the first item in the list*/
     public void addFirst(int x){
         sentinel.next = new IntNode(x, sentinel.next);
@@ -85,11 +93,11 @@ public class SLList {
     }
 
     public static void main(String[] args) {
-        SLList L = new SLList(10);
+        SLList L = new SLList(new int[]{5,10,20});
 //        L.addFirst(10);
 //        L.addFirst(5);
 //        L.addLast(20);
-        L.deleteFirst();
+//        L.deleteFirst();
         int s = L.fastSize();
 //        int first = L.getFirst();
 //        System.out.println(first);

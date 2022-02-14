@@ -75,16 +75,32 @@ public class IntList {
         return new IntList(x, this);
     }
 
+    /** If 2 numbers in a row are the same, add them together and make an large node */
+    public void addAdjacent(){
+        IntList p =this;
+        while(p.rest != null){
+            if(p.first==p.rest.first){
+                first *= 2;
+                rest = rest.rest;
+            }else{
+                p=p.rest;
+            }
+        }
+    }
+
     public static void main(String[] args) {
-         IntList L = new IntList(15, null);
-         L = L.addFirst(10);
-         L= L.addFirst(5);
+         IntList L = new IntList(3, null);
+         L = L.addFirst(1);
+         L= L.addFirst(1);
+         L= L.addFirst(1);
+         L.addAdjacent();
 //         L = new IntList(10, L);
 //         L = new IntList(5, L);
+        System.out.println(L.size());
         System.out.println(L.get(0));
         System.out.println(L.get(1));
-        System.out.println(L.get(2));
-        System.out.println(L.size());
+
+
 
 
 //        IntList Q = incrList(L, 1);

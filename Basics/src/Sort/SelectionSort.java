@@ -29,13 +29,13 @@ public class SelectionSort {
         }
     }
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         int[] input = new int[]{5,4,3,2,1};
         sort(input);
         for (int i = 0; i < input.length; i++) {
             System.out.println(input[i]);
         }
 
-    }
+    }*/
 
 }

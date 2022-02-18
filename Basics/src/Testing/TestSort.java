@@ -1,18 +1,22 @@
 package Testing;
-import Sort.Sort;
+import Sort.SelectionSort;
 
 public class TestSort {
     public static void testSort() {
-        String[] input = {"i", "have","a","cat", "called", "pixie"};
-        String[] expected = {"a", "called","cat","have", "i", "pixie"};
+        int[] input = new int[]{5,4,3,2,1};
+        int[] expected = new int[]{1,2,3,4,5} ;
 
-        Sort.sort(input);
-        for (int i = 0; i < input.length; i++) {
+        SelectionSort.sort(input);
+        // without junit library
+        /*for (int i = 0; i < input.length; i++) {
             if(!input[i].equals(expected[1])){
                 System.out.println("Mismatch at position " + i + ", expected: " + expected[i] + ", but got " + input[i]);
                 return;
             }
-        }
+        }*/
+
+        // with junit library
+        org.junit.Assert.assertArrayEquals(expected, input);
     }
 
     public static void main(String[] args) {

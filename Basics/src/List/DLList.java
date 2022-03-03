@@ -15,7 +15,7 @@ public class DLList {
     private IntNode sentinel;
     private int size;
 
-    /** Creates an empty SLList*/
+    /** Creates an empty DLList*/
     public DLList(){
         sentinel=new IntNode(22,null);
         sentinel.prev = sentinel;
@@ -31,9 +31,11 @@ public class DLList {
         size =1;
     }
 
-    /** Create a SLList with an int[] array*/
+    /** Create a DLList with an int[] array*/
     public DLList(int[] arr){
         sentinel=new IntNode(22,null);
+        sentinel.prev = sentinel;
+        sentinel.next = sentinel;
         for (int i = arr.length-1; i >= 0; i--) {
             addFirst(arr[i]);
         }
@@ -55,9 +57,7 @@ public class DLList {
 
 
     public static void main(String[] args) {
-        DLList d1 = new DLList(3);
-        d1.addFirst(2);
-        d1.addFirst(1);
+        DLList d1 = new DLList(new int[]{1,2,3});
         System.out.println(d1.getFirst());
     }
 }

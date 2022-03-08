@@ -57,7 +57,9 @@ public class DLList {
 
 
     public static void main(String[] args) {
-        DLList d1 = new DLList(new int[]{1,2,3});
-        System.out.println(d1.getFirst());
+        DLList[] twoDList = new DLList[3];
+        twoDList[0] = new DLList(new int[]{1,2,3});
+        twoDList[1] = new DLList(new int[]{4,5,6});
+        twoDList[2] = new DLList(new int[]{7,8,9});
     }
 }

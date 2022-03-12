@@ -15,14 +15,13 @@ public class WordUtils {
     }
 
     public static void main(String[] args) {
-        List61B<String> gs1 = new AList<>("Hello");
+        List61B<String> gs1 = new GSLList<>("Hello");
         gs1.addLast("world");
         gs1.addLast("pixie");
         gs1.addLast("is");
         gs1.addLast("a");
         gs1.addLast("nice");
         gs1.addLast("kitten");
-        String longest = longest(gs1);
-        System.out.println(longest);
+        gs1.print();
     }
 }

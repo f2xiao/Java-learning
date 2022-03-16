@@ -106,8 +106,8 @@ public class HelloNumbers {
 //         boolean isPrime = isPrime(10);
 //        System.out.println(isPrime);
 //        printPrime(10);
-        printStars(5);
-        printStarsReversed(5);
+//        printStars(5);
+//        printStarsReversed(5);
 //        printStars(10);
 //        printArray(new int[]{4, 7, 10});
 //        printArray(new int[3]);
@@ -120,5 +120,20 @@ public class HelloNumbers {
 
         // Should print 4, 8, -3, 13, 9, 4
 //        System.out.println(java.util.Arrays.toString(a));
+        int num;
+        String str;
+//        Dog dog1 = new Dog(1);
+        String[] strArr = new String[2];
+        Dog[] dogArr = new Dog[2];
+        num =2;
+        str = "Hello";
+        int[] intArr = new int[2];
+        float[] floatArr = new float[2];
+        double[] doubleArr = new double[2];
+        long[] longArr = new long[2];
+        boolean[] boolArr = new boolean[2];
+        byte[] byteArr = new byte[2];
+        short[] shortArr = new short[2];
+        char[] charArr = new char[2];
     }
 }

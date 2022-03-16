@@ -118,9 +118,6 @@ public class IntList {
             System.out.println(L.get(i));
         }
 
-
-
-
 //        IntList Q = incrList(L, 1);
 //        System.out.println(Q.get(0));
 //        System.out.println(Q.get(1));

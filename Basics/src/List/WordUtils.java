@@ -15,7 +15,7 @@ public class WordUtils {
     }
 
     public static void main(String[] args) {
-        List61B<String> gs1 = new GSLList<>("Hello");
+        List61B<String> gs1 = new SLList<>("Hello");
         gs1.addLast("world");
         gs1.addLast("pixie");
         gs1.addLast("is");

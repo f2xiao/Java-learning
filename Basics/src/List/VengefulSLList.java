@@ -10,6 +10,11 @@ public class VengefulSLList<Item> extends SLList<Item> {
         deletedItems = new SLList<>();
     }
 
+    public VengefulSLList(Item x){
+        super(x);
+        deletedItems = new SLList<>();
+    }
+
 @Override
     public Item removeLast(){
         Item removedItem = super.removeLast();
@@ -18,7 +23,7 @@ public class VengefulSLList<Item> extends SLList<Item> {
 }
 
     public static void main(String[] args) {
-        VengefulSLList<Integer> vsl = new VengefulSLList<>();
+        VengefulSLList<Integer> vsl = new VengefulSLList<>(0);
         vsl.addLast(1);
         vsl.addLast(5);
         vsl.addLast(9);

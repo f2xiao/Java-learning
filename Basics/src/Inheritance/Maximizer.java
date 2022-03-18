@@ -1,10 +1,11 @@
 package Inheritance;
 
-public class max {
-    public static Object max(Object[] items){
+public class Maximizer {
+    public static OurComparable max(OurComparable[] items){
         int maxDex = 0;
         for (int i = 0; i < items.length; i++) {
-            if(items[i] > items[maxDex]){
+
+            if(items[i].compareTo(items[maxDex]) >0 ){
                 maxDex = i;
             }
         }
@@ -12,7 +13,7 @@ public class max {
     }
 
     public static void main(String[] args) {
-        Dog[] dogs = {new Dog("Aflie", 3),new Dog("Betty", 9),new Dog("Cindy", 15) };
+        Dog[] dogs = {new Dog("Alfie", 3),new Dog("Bat", 9),new Dog("Cat", 15) };
         Dog maxDog = (Dog) max(dogs);
         maxDog.bark();
     }

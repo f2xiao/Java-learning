@@ -2,10 +2,10 @@ package Inheritance;
 
 public class Dog implements OurComparable {
     String name;
-    int weight;
-    public Dog(String n, int w){
+    int size;
+    public Dog(String n, int s){
         name = n;
-        weight = w;
+        size = s;
     }
     public static Dog maxDog(Dog[] dogs){
         if(dogs==null || dogs.length==0){
@@ -13,7 +13,7 @@ public class Dog implements OurComparable {
         }
         Dog maxDog = dogs[0];
         for (Dog dog : dogs) {
-            if (dog.weight > maxDog.weight) {
+            if (dog.size> maxDog.size) {
                 maxDog = dog;
             }
         }
@@ -34,8 +34,14 @@ public class Dog implements OurComparable {
     }
 
     @Override
-    public int compareTo(object o) {
+    public int compareTo(Object o) {
+        Dog uddaDog = (Dog) o;
+       /* if(this.size < uddaDog.size){
+            return -1;
+        }else if(this.size == uddaDog.size){
+            return 0;
+        }*/
 
-        return 0;
+        return this.size - uddaDog.size;
     }
 }

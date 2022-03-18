@@ -1,5 +1,5 @@
 package Inheritance;
 
 public interface OurComparable {
-    public int compareTo(object o);
+    public int compareTo(Object o);
 }

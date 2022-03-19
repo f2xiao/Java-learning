@@ -1,13 +1,15 @@
 package Inheritance;
 
+import static Inheritance.Maximizer.max;
+
 public class Dog implements Comparable<Dog> {
-    String name;
-    int size;
+    private String name;
+    private int size;
     public Dog(String n, int s){
         name = n;
         size = s;
     }
-    public static Dog maxDog(Dog[] dogs){
+   /* public static Dog maxDog(Dog[] dogs){
         if(dogs==null || dogs.length==0){
             return null;
         }
@@ -19,15 +21,8 @@ public class Dog implements Comparable<Dog> {
         }
 
         return maxDog;
-    }
+    }*/
 
-
-    public static void main(String[] args) {
-        Poddle frank = new Poddle("Frank", 5);
-        Malamute frankSr = new Malamute("Frank Sr.", 100);
-        Dog[] dogs = {frank, frankSr};
-        Dog largerPoddle =  maxDog(dogs);
-    }
 
     public void bark() {
         System.out.println(name + " says: bark");
@@ -42,5 +37,12 @@ public class Dog implements Comparable<Dog> {
         }*/
 
         return this.size - uddaDog.size;
+    }
+
+
+    public static void main(String[] args) {
+        Dog[] dogs = {new Dog("Alfie", 3),new Dog("Bat", 9),new Dog("Cat", 15) };
+        Dog maxDog = (Dog) max(dogs);
+        maxDog.bark();
     }
 }

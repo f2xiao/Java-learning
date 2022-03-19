@@ -1,6 +1,6 @@
 package Inheritance;
 
-public class Dog implements OurComparable {
+public class Dog implements Comparable<Dog> {
     String name;
     int size;
     public Dog(String n, int s){
@@ -34,8 +34,7 @@ public class Dog implements OurComparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Dog uddaDog = (Dog) o;
+    public int compareTo(Dog uddaDog) {
        /* if(this.size < uddaDog.size){
             return -1;
         }else if(this.size == uddaDog.size){

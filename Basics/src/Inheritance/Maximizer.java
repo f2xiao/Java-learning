@@ -1,7 +1,7 @@
 package Inheritance;
 
 public class Maximizer {
-    public static OurComparable max(OurComparable[] items){
+    public static Comparable max(Comparable[] items){
         int maxDex = 0;
         for (int i = 0; i < items.length; i++) {
 
@@ -10,11 +10,5 @@ public class Maximizer {
             }
         }
         return items[maxDex];
-    }
-
-    public static void main(String[] args) {
-        Dog[] dogs = {new Dog("Alfie", 3),new Dog("Bat", 9),new Dog("Cat", 15) };
-        Dog maxDog = (Dog) max(dogs);
-        maxDog.bark();
     }
 }

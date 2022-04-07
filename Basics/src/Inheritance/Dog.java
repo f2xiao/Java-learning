@@ -1,13 +1,17 @@
 package Inheritance;
 
-public class Dog implements OurComparable {
-    String name;
-    int size;
+import java.util.Comparator;
+
+import static Inheritance.Maximizer.max;
+
+public class Dog implements Comparable<Dog> {
+    private String name;
+    private int size;
     public Dog(String n, int s){
         name = n;
         size = s;
     }
-    public static Dog maxDog(Dog[] dogs){
+   /* public static Dog maxDog(Dog[] dogs){
         if(dogs==null || dogs.length==0){
             return null;
         }
@@ -19,23 +23,15 @@ public class Dog implements OurComparable {
         }
 
         return maxDog;
-    }
+    }*/
 
-
-    public static void main(String[] args) {
-        Poddle frank = new Poddle("Frank", 5);
-        Malamute frankSr = new Malamute("Frank Sr.", 100);
-        Dog[] dogs = {frank, frankSr};
-        Dog largerPoddle =  maxDog(dogs);
-    }
 
     public void bark() {
         System.out.println(name + " says: bark");
     }
 
     @Override
-    public int compareTo(Object o) {
-        Dog uddaDog = (Dog) o;
+    public int compareTo(Dog uddaDog) {
        /* if(this.size < uddaDog.size){
             return -1;
         }else if(this.size == uddaDog.size){
@@ -43,5 +39,34 @@ public class Dog implements OurComparable {
         }*/
 
         return this.size - uddaDog.size;
+    }
+
+    private static class NameComparator implements Comparator<Dog>{
+        @Override
+        public int compare(Dog a, Dog b) {
+            return a.name.compareTo(b.name);
+        }
+    }
+
+    public static Comparator<Dog> getNameComparator(){
+        return new NameComparator();
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Dog d1 =new Dog("Alfie", 3);
+        Dog d2 =new Dog("Cat", 9);
+        Dog d3 =new Dog("Bat", 15) ;
+        Dog[] dogs = {d1,d2,d3};
+        Comparator<Dog> nc = Dog.getNameComparator();
+//        Dog maxDog = (Dog) max(dogs);
+//        maxDog.bark();
+        if(nc.compare(d1,d3) >0){
+            d1.bark();
+        }else{
+            d3.bark();
+        }
     }
 }

@@ -28,21 +28,24 @@ public class UnionFind {
     /* Returns the size of the set v1 belongs to. */
     public int sizeOf(int v1) {
         // TODO
-
-        while(parent[v1] >= 0){
-            v1 = parent[v1];
+        int root = parent(v1);
+        if(parent[root] == -1){
+            return 1;
         }
-        if(-v1 > 1){
-            return -v1;
-        }
-        return -1;
+        return -parent[root];
     }
 
     /* Returns the parent of v1. If v1 is the root of a tree, returns the
        negative size of the tree for which v1 is the root. */
     public int parent(int v1) {
         // TODO
-        return -1;
+        if(parent[v1]<0){
+            return parent[v1];
+        }
+        while(parent[v1] >= 0){
+            v1 = parent[v1];
+        }
+        return v1;
     }
 
     /* Returns true if nodes v1 and v2 are connected. */

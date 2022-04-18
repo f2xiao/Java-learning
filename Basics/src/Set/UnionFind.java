@@ -51,7 +51,7 @@ public class UnionFind {
     /* Returns true if nodes v1 and v2 are connected. */
     public boolean connected(int v1, int v2) {
         // TODO
-        return false;
+        return parent(v1) == parent(v2);
     }
 
     /* Connects two elements v1 and v2 together. v1 and v2 can be any valid
@@ -61,6 +61,7 @@ public class UnionFind {
        change the sets but may alter the internal structure of the data. */
     public void union(int v1, int v2) {
         // TODO
+
     }
 
     /* Returns the root of the set V belongs to. Path-compression is employed

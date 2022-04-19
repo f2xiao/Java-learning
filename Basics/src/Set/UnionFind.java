@@ -2,7 +2,6 @@ package Set;
 
 public class UnionFind {
 
-
     // TODO - Add instance variables?
     private int[] arr;
 
@@ -20,7 +19,7 @@ public class UnionFind {
     private void validate(int vertex) {
         // TODO
         if(vertex >= arr.length || vertex < 0){
-            throw new IllegalArgumentException("v1 must be in range of [0,n)");
+            throw new IllegalArgumentException("v1 must be in range of [0,"+ arr.length + ")");
         }
     }
 

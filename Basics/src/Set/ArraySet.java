@@ -89,6 +89,33 @@ public class ArraySet<T> implements Iterable<T>  {
         return returnedStr.toString();
     }
 
+    @Override
+    public boolean equals(Object other){
+        if(this == other){
+            return true;
+        }
+
+        if(other == null){
+            return false;
+        }
+
+        if (other.getClass() != this.getClass()) {
+            return false;
+        }
+
+        ArraySet<T> o = (ArraySet<T>) other;
+
+        if(o.size() != this.size()){
+            return false;
+        }
+        for (T item : o){
+            if (!this.contains(item)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
     public static void main(String[] args) {
@@ -106,6 +133,17 @@ public class ArraySet<T> implements Iterable<T>  {
 
         // print ArraySet
         System.out.println(s);
+
+//        ArraySet<String> sc = new ArraySet<>();
+//        sc.add("fish");
+//        sc.add("house");
+
+        ArraySet<String> sc = s;
+
+
+        // check if sc equals to s
+        System.out.println(sc.equals(s));
+
     }
 
 }

@@ -89,6 +89,7 @@ public class ArraySet<T> implements Iterable<T>  {
         return returnedStr.toString();
     }
 
+    /** check if two ArraySet is the same */
     @Override
     public boolean equals(Object other){
         if(this == other){

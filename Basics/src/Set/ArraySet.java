@@ -1,6 +1,8 @@
 package Set;
 
-public class ArraySet<T> {
+import java.util.Iterator;
+
+public class ArraySet<T> implements Iterable<T>  {
     private T[] items;
     private int size;
 
@@ -39,20 +41,50 @@ public class ArraySet<T> {
         return size;
     }
 
-    public static void main(String[] args) {
-        ArraySet<String> s = new ArraySet<>();
-        s.add(null);
-        s.add("horse");
-        s.add("fish");
-        s.add("house");
-        s.add("fish");
-        System.out.println(s.contains("horse"));
-        System.out.println(s.size());
-    }
-
-    /* Also to do:
+       /* Also to do:
     1. Make ArraySet implement the Iterable<T> interface.
     2. Implement a toString method.
     3. Implement an equals() method.
     */
+
+    private class ArraySetIterator implements Iterator<T> {
+
+        private int wizPos;
+
+        public ArraySetIterator(){
+            wizPos = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return wizPos < size;
+        }
+
+        @Override
+        public T next() {
+            T returnedItem = items[wizPos];
+            wizPos ++;
+            return returnedItem;
+        }
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ArraySetIterator();
+    }
+
+
+
+    public static void main(String[] args) {
+        ArraySet<String> s = new ArraySet<>();
+//        s.add(null);
+        s.add("horse");
+        s.add("fish");
+        s.add("house");
+        s.add("fish");
+        for (String str:s){
+            System.out.println(str);
+        }
+    }
+
 }

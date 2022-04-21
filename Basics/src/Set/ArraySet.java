@@ -68,9 +68,25 @@ public class ArraySet<T> implements Iterable<T>  {
         }
     }
 
+    /** returns an iterator (a.k.a. seer) into ME */
     @Override
     public Iterator<T> iterator() {
         return new ArraySetIterator();
+    }
+
+    /** returns a string to be printed */
+    @Override
+    public String toString(){
+        StringBuilder returnedStr = new StringBuilder("{");
+        for (int i = 0; i < size - 1; i += 1) {
+            returnedStr.append(items[i].toString());
+            returnedStr.append(", ");
+        }
+
+        returnedStr.append(items[size-1]);
+        returnedStr.append("}");
+
+        return returnedStr.toString();
     }
 
 
@@ -82,9 +98,14 @@ public class ArraySet<T> implements Iterable<T>  {
         s.add("fish");
         s.add("house");
         s.add("fish");
+
+        // iteration
         for (String str:s){
             System.out.println(str);
         }
+
+        // print ArraySet
+        System.out.println(s);
     }
 
 }

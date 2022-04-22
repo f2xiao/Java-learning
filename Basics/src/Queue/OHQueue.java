@@ -24,7 +24,8 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
             curr = queue;
         }
 
-        /** check if the description is good or not */
+        /** check if the description is good or not,
+         *  returns true if the description is not empty and longer than 5 chars */
         public boolean isGood(String description){
             return description != null && description.length() > 5;
         }
@@ -47,10 +48,12 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
 
     OHRequest cur;
 
+    /** creates a OHQueue with queue as the first item */
     public OHQueue(OHRequest queue){
         this.cur = queue;
     }
 
+    /** returns an iterator with cur as the first item in the queue */
     @Override
     public Iterator<OHRequest> iterator() {
         return new OHIterator(cur);
@@ -63,8 +66,10 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
         OHRequest s2 = new OHRequest("help", "Hug", s3);
         OHRequest s1 = new OHRequest("no I haven't tried stepping through", "Itai", s2);
 
+        /* makes a new OHQueue object*/
         OHQueue q = new OHQueue(s1);
 
+        /* prints the names of people with good descriptions*/
         for (OHRequest r: q){
             System.out.println(r.name);
         }

@@ -46,6 +46,24 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
         }
     }
 
+    public class TYIterator extends OHIterator{
+
+        public TYIterator(OHRequest queue) {
+            super(queue);
+        }
+
+        @Override
+        public OHRequest next(){
+            OHRequest rqt = curr;
+            if(curr.description.contains("thank u")){
+                curr = curr.next.next;
+            }else{
+                curr = curr.next;
+            }
+            return rqt;
+        }
+    }
+
     OHRequest cur;
 
     /** creates a OHQueue with queue as the first item */

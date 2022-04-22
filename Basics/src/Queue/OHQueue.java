@@ -2,7 +2,7 @@ package Queue;
 import java.util.Iterator;
 
 public class OHQueue implements Iterable<OHQueue.OHRequest> {
-
+    /** OHRequest represents a single request */
     public static class OHRequest {
         public String description;
         public String name;
@@ -15,6 +15,8 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
         }
     }
 
+    /** OHIterator implements an iterator over OHRequest
+     objects that only returns requests with good descriptions */
     public class OHIterator implements Iterator<OHRequest>{
         OHRequest curr;
 
@@ -22,6 +24,7 @@ public class OHQueue implements Iterable<OHQueue.OHRequest> {
             curr = queue;
         }
 
+        /** check if the description is good or not */
         public boolean isGood(String description){
             return description != null && description.length() > 5;
         }
